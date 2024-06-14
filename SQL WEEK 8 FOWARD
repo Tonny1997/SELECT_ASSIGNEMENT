@@ -5,20 +5,32 @@
 SELECT * FROM 
 netflix_titles;
 
+
+
+SELECT * FROM 
+social_media
+
+
+SELECT * FROM 
+netflix_titles
+where country = 'Germany'
+
 SELET gender,platform,
-FROM socuial_media
+FROM social_media
 WHERE time_spent = 2;
 
 
 
 SELET gender,platform,
-FROM socuial_media
+FROM social_media
 WHERE time_spent = 2
 ORDER BY platform ASC;
 
 
 SELECT DISTINCT release_year, duration,
 FROM netflix_titles;
+
+
 
 
 
