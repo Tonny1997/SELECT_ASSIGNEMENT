@@ -26,20 +26,17 @@ FROM social_media;
 ORDER BY time_spent ASC;
 
 
-
-
-
-
-
-
-
-
 WHERE time_spent = 2
 ORDER BY platform ASC;
 
 
-SELECT DISTINCT release_year, duration,
+SELECT DISTINCT release_year AS Year
 FROM netflix_titles;
+
+
+
+
+
 
 
 
