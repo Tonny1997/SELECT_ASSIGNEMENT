@@ -17,4 +17,8 @@ WHERE time_spent = 2
 ORDER BY platform ASC;
 
 
+SELECT DISTINCT release_year, duration,
+FROM netflix_titles;
+
+
 
