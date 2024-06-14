@@ -1,1 +1,20 @@
---FORGOT TO SAVE MY CODE  IT DISSAPEARED RETURNING T0 REDO AGAIN   
+--FORGOT TO SAVE MY CODE  IT DISSAPEARED RETURNING T0 REDO AGAIN  
+
+
+
+SELECT * FROM 
+netflix_titles;
+
+SELET gender,platform,
+FROM socuial_media
+WHERE time_spent = 2;
+
+
+
+SELET gender,platform,
+FROM socuial_media
+WHERE time_spent = 2
+ORDER BY platform ASC;
+
+
+
