@@ -38,6 +38,11 @@ FROM social_media
 WHERE location = 'Australia' AND platform LIKE 'G%';
 
 
+SELECT * FROM netflix_titles
+WHERE type = 'Move' AND country LIKE 'G%' OR director LIKE 'R%';
+
+
+
 
 
 
