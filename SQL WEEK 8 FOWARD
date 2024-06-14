@@ -8,12 +8,12 @@ netflix_titles;
 
 
 SELECT * FROM 
-social_media
+social_media;
 
 
 SELECT * FROM 
 netflix_titles
-where country = 'Germany'
+where country = 'Germany';
 
 SELET gender,platform,
 FROM social_media
@@ -22,7 +22,18 @@ WHERE time_spent = 2;
 
 
 SELET gender,platform,
-FROM social_media
+FROM social_media;
+ORDER BY time_spent ASC;
+
+
+
+
+
+
+
+
+
+
 WHERE time_spent = 2
 ORDER BY platform ASC;
 
