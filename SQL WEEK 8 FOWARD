@@ -21,17 +21,24 @@ WHERE time_spent = 2;
 
 
 
-SELET gender,platform,
+SELET gender,platform AS avenue
 FROM social_media;
 ORDER BY time_spent ASC;
 
 
 WHERE time_spent = 2
-ORDER BY platform ASC;
+ORDER BY platform DESC;
 
 
 SELECT DISTINCT release_year AS Year
 FROM netflix_titles;
+
+SELECT *
+FROM social_media
+WHERE location = 'Australia' AND platform LIKE 'G%';
+
+
+
 
 
 
