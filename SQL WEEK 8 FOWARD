@@ -8,6 +8,15 @@ netflix_titles;
 SELECT * FROM 
 social_media;
 
+SELECT COUNT(time_spent)
+FROM social_media;
+
+SELECT COUNT(time_spent)
+FROM social_media
+WHERE age > 20;
+
+
+
 SELECT * FROM netflix_titles
 LIMIT 3;
 
