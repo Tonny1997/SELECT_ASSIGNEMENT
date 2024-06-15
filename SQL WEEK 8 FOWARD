@@ -35,10 +35,26 @@ FROM netflix_titles
 GROUP BY show_id;
 
 
+SELECT COUNT(DISTINCT time_spent)
+FROM social_media;
+
+SELECT SUM(time_spent)
+FROM social_media;
+WHERE profession = 'software';
 
 
 SELECT DISTINCT time_spent AS Distincttime_spent, platform,
 FROM social_media;
+
+SELECT AVG(release_year)
+FROM netflix_titles
+WHERE rating = 'TV-MA';
+
+
+
+
+
+
 
 SELECT * FROM 
 netflix_titles
