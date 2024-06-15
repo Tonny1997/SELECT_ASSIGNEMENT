@@ -49,12 +49,8 @@ SELECT * FROM netflix_titles
 WHERE release_year NOT BETWEEN 2015 AND 2020;
 
 
-SELECT * FROM social_media
+SELECT * FROM netflix_titles
 WHERE listed_in NOT IN ('International TV Shows, Romantic TV Shows, TV Comedies', 'Children & Family Movies');
-
-
-
-
 
 
 
@@ -75,6 +71,19 @@ FROM social_media
 GROUP BY platform
 HAVING COUNT(age) > 5
 ORDER BY COUNT(age) DESC;
+
+
+
+INSERT INTO social_media (time_spent, interests , location, profession)
+VALUES
+('13', 'hiking', 'Kenya', 'Engineer')
+('23', 'Farming', 'Uganda', 'Doctor')
+('9', 'Travellinh', 'Seychelles', 'Guide');
+
+
+
+
+
 
 
 
