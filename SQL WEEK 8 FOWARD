@@ -13,6 +13,10 @@ social_media;
 SELECT DISTINCT time_spent AS Distincttime_spent, platform,
 FROM social_media;
 
+SELECT * FROM 
+netflix_titles
+where country = 'Germany';
+
 
 SELECT time_spent,interests
 FROM social_media
@@ -25,11 +29,13 @@ WHERE director IS NOT NULL;
 
 
 
+UPDATE netflix_titles
+SET director = 'Alfred Schmidt', title= 'Frankfurt'
+WHERE cast = 'Midnight Mass';
 
 
-SELECT * FROM 
-netflix_titles
-where country = 'Germany';
+
+
 
 SELET gender,platform,
 FROM social_media
