@@ -45,6 +45,18 @@ SELECT * FROM netflix_titles
 WHERE type = 'Move' AND country LIKE 'G%' OR director LIKE 'R%';
 
 
+SELECT * FROM netflix_titles
+WHERE release_year NOT BETWEEN 2015 AND 2020;
+
+
+SELECT * FROM social_media
+WHERE listed_in NOT IN ('International TV Shows, Romantic TV Shows, TV Comedies', 'Children & Family Movies');
+
+
+
+
+
+
 
 SELECT COUNT(age), platform
 FROM  social_media
