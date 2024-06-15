@@ -5,10 +5,28 @@
 SELECT * FROM 
 netflix_titles;
 
-
-
 SELECT * FROM 
 social_media;
+
+SELECT * FROM netflix_titles
+LIMIT 3;
+
+SELECT TOP 3 * FROM netflix_titles
+WHERE Country='Mexico';
+
+SELECT MIN(release_year)
+FROM netflix_titles;
+
+
+SELECT MAX(release_year)
+FROM netflix_titles;
+
+SELECT MIN(release_year) AS Ols_School, show_id
+FROM netflix_titles
+GROUP BY show_id;
+
+
+
 
 SELECT DISTINCT time_spent AS Distincttime_spent, platform,
 FROM social_media;
@@ -16,6 +34,11 @@ FROM social_media;
 SELECT * FROM 
 netflix_titles
 where country = 'Germany';
+
+DELETE FROM netflix_titles
+WHERE country='Germany';
+
+
 
 
 SELECT time_spent,interests
