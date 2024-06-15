@@ -43,6 +43,13 @@ WHERE type = 'Move' AND country LIKE 'G%' OR director LIKE 'R%';
 
 
 
+SELECT COUNT(age), platform
+FROM  social_media
+GROUP BY platform
+ORDER BY COUNT(age) DESC;
+
+
+
 
 
 
