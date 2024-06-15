@@ -10,6 +10,22 @@ netflix_titles;
 SELECT * FROM 
 social_media;
 
+SELECT DISTINCT time_spent AS Distincttime_spent, platform,
+FROM social_media;
+
+
+SELECT time_spent,interests
+FROM social_media
+WHERE interests IS NULL;
+
+
+SELECT director,title,cast
+FROM netflix_titles
+WHERE director IS NOT NULL;
+
+
+
+
 
 SELECT * FROM 
 netflix_titles
@@ -79,6 +95,9 @@ VALUES
 ('13', 'hiking', 'Kenya', 'Engineer')
 ('23', 'Farming', 'Uganda', 'Doctor')
 ('9', 'Travellinh', 'Seychelles', 'Guide');
+
+
+
 
 
 
