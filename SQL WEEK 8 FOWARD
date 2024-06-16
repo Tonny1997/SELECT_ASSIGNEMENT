@@ -152,6 +152,20 @@ VALUES
 
 
 
+SELECT social_media.gender, netflix_titles.type, social_media.age
+FROM social_media
+INNER JOIN netflix_titles ON social_media.Country=netflix_titles.Country;
+
+
+SELECT social_media.gender, netflix_titles.type, social_media.age
+FROM social_media
+LEFT JOIN netflix_titles ON social_media.Country=netflix_titles.Country
+ORDER BY social_media.age;
+
+
+SELECT social_media.gender, netflix_titles.type, social_media.age
+FROM social_media
+RIHT JOIN netflix_titles ON social_media.Country=netflix_titles.Country
 
 
 
