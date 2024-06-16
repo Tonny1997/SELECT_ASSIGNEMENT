@@ -30,7 +30,7 @@ FROM netflix_titles;
 SELECT MAX(release_year)
 FROM netflix_titles;
 
-SELECT MIN(release_year) AS Ols_School, show_id
+SELECT MIN(release_year) AS Old_School, show_id
 FROM netflix_titles
 GROUP BY show_id;
 
@@ -45,20 +45,20 @@ WHERE profession = 'software';
 
 SELECT DISTINCT time_spent AS Distincttime_spent, platform,
 FROM social_media;
-
 SELECT AVG(release_year)
 FROM netflix_titles
 WHERE rating = 'TV-MA';
 
 
-
-
+SELECT * FROM netflix_titles
+WHERE release_year <> 2021;
 
 
 
 SELECT * FROM 
 netflix_titles
 where country = 'Germany';
+
 
 DELETE FROM netflix_titles
 WHERE country='Germany';
@@ -213,6 +213,7 @@ WHERE Country='Australia';
 
 
 
+---SQL Case
 
 SELECT show_id, release_year,
 CASE
@@ -222,6 +223,11 @@ CASE
 END AS launch year
 FROM netflix_titles;
 
+
+--Using COALESCE() function
+
+SELECT age * (time_spent + COALESCE(income, 0))
+FROM Soial_media;
 
 
 
