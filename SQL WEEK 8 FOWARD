@@ -175,6 +175,62 @@ FULL OUTER JOIN netflix_titles ON social_media.Country=netflix_titles.Country
 ORDER BY social_media.age;
 
 
+--To select distinct Countries from both tables
+
+SELECT Country FROM social_media
+UNION
+SELECT Country FROM netflix_titles
+ORDER BY Country;
+
+
+
+--To selct from both tables including duplicate countries
+
+SELECT Country FROM social_media
+UNION ALL
+SELECT Country FROM netflix_titles
+ORDER BY Country;
+
+
+SELECT age, Country FROM social_media
+WHERE Country='Germany'
+UNION
+SELECT age, Country FROM netflix_titles
+WHERE Country='Germany'
+ORDER BY age;
+
+
+SELECT * INTO social_media
+FROM netflix_titles
+WHERE Country = 'Germany';
+
+
+
+INSERT INTO social_media (age, City, Country)
+SELECT age, City, Country FROM netflix_titles
+WHERE Country='Australia';
+
+
+
+
+
+SELECT show_id, release_year,
+CASE
+    WHEN release_year > 2018 THEN 'The quantity is greater than 2018'
+    WHEN release_year = 2018 THEN 'The quantity is 2018'
+    ELSE 'The release_year is under 2018'
+END AS launch year
+FROM netflix_titles;
+
+
+
+
+
+
+
+
+
+
 
 
 
