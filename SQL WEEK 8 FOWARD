@@ -1,6 +1,8 @@
---FORGOT TO SAVE MY CODE  IT DISSAPEARED RETURNING T0 REDO AGAIN  
 
 
+
+/*To determine that my tables were
+uploaded successfully on MYSQL Workbench*/
 
 SELECT * FROM 
 netflix_titles;
@@ -16,6 +18,7 @@ FROM social_media
 WHERE age > 20;
 
 
+--SQL SELECT
 
 SELECT * FROM netflix_titles
 LIMIT 3;
@@ -29,6 +32,9 @@ FROM netflix_titles;
 
 SELECT MAX(release_year)
 FROM netflix_titles;
+
+
+--SQL GROUP BY
 
 SELECT MIN(release_year) AS Old_School, show_id
 FROM netflix_titles
@@ -90,6 +96,7 @@ FROM social_media
 WHERE time_spent = 2;
 
 
+--SQL ORDER BY
 
 SELET gender,platform AS avenue
 FROM social_media;
@@ -142,7 +149,7 @@ GROUP BY platform
 HAVING COUNT(age) > 5
 ORDER BY COUNT(age) DESC;
 
-
+--SQL INSERT INTO
 
 INSERT INTO social_media (time_spent, interests , location, profession)
 VALUES
@@ -151,6 +158,7 @@ VALUES
 ('9', 'Travellinh', 'Seychelles', 'Guide');
 
 
+--SQL JOIN
 
 SELECT social_media.gender, netflix_titles.type, social_media.age
 FROM social_media
@@ -192,6 +200,8 @@ SELECT Country FROM netflix_titles
 ORDER BY Country;
 
 
+-SQL ORDER BY
+
 SELECT age, Country FROM social_media
 WHERE Country='Germany'
 UNION
@@ -213,7 +223,7 @@ WHERE Country='Australia';
 
 
 
---SQL Case
+--SQL CASE
 
 SELECT show_id, release_year,
 CASE
