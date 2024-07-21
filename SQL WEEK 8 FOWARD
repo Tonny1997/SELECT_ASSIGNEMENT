@@ -246,8 +246,8 @@ SELECT Country INTO social_media
 FROM netflix_titles
 ORDER BY Country;
 
-#Example 2 of Using SQl SELECT INT0
-SELECT type,release_year,duration INTO Soca_media
+--Example 2 of Using SQl SELECT INT0.COPPYING DATA INTO AN EXTERNAL DATAASE
+SELECT type,release_year,duration INTO Social_media
 FROM netflix_titles
 GROUP BY Country;
 
@@ -256,6 +256,32 @@ FROM netflix_titles;
 
 SELECT type, Country INTO netflix_titlesBackupdata
 FROM netflix_titles;
+
+
+--copying data from one table into another in the same database
+
+INSERT INTO Social_media (type, release_year, Country)
+SELECT type, release_year, Country FROM netflix_titles
+WHERE Country='Germany';
+
+--CREATING/REPLACNG A VEW
+CREATE OR REPLACE VIEW [USACustomers] AS
+SELECT *FROM netflix_titles
+WHERE Country = "United States";
+
+--CEATING A PROCEDURE
+CREATE PROCEDURE SelectAllCustomers
+AS
+SELECT * FROM netflix_titles
+GO;
+
+--CREATING A PROCEDURE on YSQL Workbench
+CREATE PROCEDURE SelectAllCustomers()
+BEGIN
+    SELECT * FROM netflix_titles;
+END$$
+
+DELIMITER ;
 
 
 
