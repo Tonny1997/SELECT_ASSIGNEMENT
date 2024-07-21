@@ -251,10 +251,10 @@ SELECT type,release_year,duration INTO Soca_media
 FROM netflix_titles
 GROUP BY Country;
 
-SELECT * INTO netflix_titles
+SELECT * INTO netflix_titlesBackupdata
 FROM netflix_titles;
 
-SELECT type, Country INTO netflix_titles
+SELECT type, Country INTO netflix_titlesBackupdata
 FROM netflix_titles;
 
 
