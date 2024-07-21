@@ -240,6 +240,17 @@ SELECT age * (time_spent + COALESCE(income, 0))
 FROM Soial_media;
 
 
+#Using SQl SELECT INT0
+
+SELECT Country INTO social_media
+FROM netflix_titles
+ORDER BY Country;
+
+#Example 2 of Using SQl SELECT INT0
+SELECT type,release_year,duration INTO Soca_media
+FROM netflix_titles
+GROUP BY Country;
+
 
 
 
