@@ -328,6 +328,15 @@ WHERE(department_id,location_id) IN
 (SELECT department_id,location_id FROM location);
 
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`()
+BEGIN SELECT * FROM netflix_titles
+LIMIT 3;
+
+END$$
+DELIMITER ;
+
+
 
 
 
