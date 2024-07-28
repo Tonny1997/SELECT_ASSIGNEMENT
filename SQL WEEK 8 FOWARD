@@ -327,7 +327,7 @@ FROM departments
 WHERE(department_id,location_id) IN 
 (SELECT department_id,location_id FROM location);
 
-
+---On mysql workbench
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`()
 BEGIN SELECT * FROM netflix_titles
@@ -335,6 +335,76 @@ LIMIT 3;
 
 END$$
 DELIMITER ;
+
+
+#TRIGGERS IN  MySQL WORKBENCH.(THE before INSERT TRGGER)
+
+create database triggers;
+SHOW databases;
+
+use triggers;
+
+#before nsert trigger
+
+create table customers
+(cust_id int, age int, name varchar(30));
+
+#delimiter id a marker for an end to each command
+
+delimiter  //
+create trigger age_verify before insert on customers
+for each row 
+if new.age < 0 then set  new.age = 0;
+end if; //
+
+insert into customers values
+(101,27,'James'),
+(102,-40,'Army'),
+(103,32,"Ben"),
+(104,-39,'Angela');
+
+select *from customers;
+
+#ALL EGATIVE AGES GET CONVERTED INTO 0 AS PER THE TRIGGER AS BELOW
+
+101	27	James
+102	0	Army
+103	32	Ben
+104	0	Angela
+
+##TRIGGERS IN  MySQL WORKBENCH.(THE after  INSERT event TRGGER)
+create table customers1(
+id int auto_increment primary key,name varchar(40) not null,email varchar(30) ,brthdate date);
+
+create table message (id int auto_increment ,messageid int ,message varchar(300) not null,primary key(id,messageid) );
+
+
+use triggers;
+create table message (id int auto_increment ,messageid int ,message varchar(300) not null,primary key(id,messageid) );
+SHOW tables;
+
+
+DELIMITER //
+
+CREATE TRIGGER check_null_dob 
+AFTER INSERT ON customers1 
+FOR EACH ROW 
+BEGIN
+    IF NEW.birthdate IS NULL THEN 
+        INSERT INTO message (messageid, message) 
+        VALUES (NEW.messageid, 'UpdateDOB');
+    END IF;
+END //
+
+DELIMITER ;
+
+
+
+insert into customers1(name ,email,birthdate)
+values('Nancy','nancy@abc.com',null);
+
+
+
 
 
 
