@@ -403,6 +403,109 @@ DELIMITER ;
 insert into customers1(name ,email,birthdate)
 values('Nancy','nancy@abc.com',null);
 
+[10:05 AM, 8/19/2024] Papa: /*Pivoting and unpivoting,
+Pivoting: Convert rows into columns, often for reporting purposes.
+Unpivoting: Convert columns back into rows*/
+
+-- Pivot example
+
+SELECT *
+FROM (
+    SELECT department_id, job_id, salary
+    FROM employees
+) AS SourceTable
+PIVOT (
+    SUM(salary)
+    FOR job_id IN ([IT_PROG], [SA_REP])
+) AS PivotTable;
+[10:38 AM, 8/19/2024] Papa: #FOR and IN for SQl
+ #  FOR
+--FOR UPDATE
+/*FOR  keyword is used in  FOR UPDATE and FOR XML/JSON
+Used to lock the rows taht are selected by a query ensuring 
+that no other transaction can modify /delete these rows until the current
+transaction is completed*/
+
+
+SELECT employee_id, salary
+FROM employees
+WHERE department_id = 10
+FOR UPDATE;
+
+--FOR XML/JSON
+/*The FOR XML and FOR JSON clauses are used to 
+format the output of a query as XML or JSON */
+
+SELECT employee_id, first_name, last_name
+FROM employees
+FOR XML AUTO;
+
+SELECT employee_id, first_name, last_name
+FROM employees
+FOR JSON AUTO;
+[11:54 AM, 8/19/2024] Papa: /*Pivoting and unpivoting,
+Pivoting: Convert rows into columns, often for reporting purposes.
+Unpivoting: Convert columns back into rows*/
+
+-- Pivot example
+
+SELECT *
+FROM (
+    SELECT department_id, job_id, salary
+    FROM employees
+) AS SourceTable
+PIVOT (
+    SUM(salary)
+    FOR job_id IN ([IT_PROG], [SA_REP])
+) AS PivotTable;
+
+
+#FOR and IN for SQl
+ #  FOR
+--FOR UPDATE
+/*FOR  keyword is used in  FOR UPDATE and FOR XML/JSON
+Used to lock the rows taht are selected by a query ensuring 
+that no other transaction can modify /delete these rows until the current
+transaction is completed*/
+
+
+SELECT employee_id, salary
+FROM employees
+WHERE department_id = 10
+FOR UPDATE;
+
+--FOR XML/JSON
+/*The FOR XML and FOR JSON clauses are used to 
+format the output of a query as XML or JSON */
+
+SELECT employee_id, first_name, last_name
+FROM employees
+FOR XML AUTO;
+
+SELECT employee_id, first_name, last_name
+FROM employees
+FOR JSON AUTO;
+
+
+
+    #IN
+/*Used to specify multiple values in 
+a WHERE  clause.Allows you to test where a column value matches 
+any value within a geven set*/
+
+--IN with a list
+SELECT employee_id, first_name, last_name
+FROM employees
+WHERE department_id IN (10, 20, 30);
+
+--IN with a subquery
+/* Used witha subquery to filter records based
+on the results of another query*/
+
+SELECT employee_id, first_name, last_name
+FROM employees
+WHERE department_id IN (SELECT department_id FROM departments WHERE location_id = 1700);
+
 
 
 
