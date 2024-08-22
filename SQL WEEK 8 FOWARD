@@ -506,6 +506,63 @@ SELECT employee_id, first_name, last_name
 FROM employees
 WHERE department_id IN (SELECT department_id FROM departments WHERE location_id = 1700);
 
+[12:12 PM, 7/22/2024] Papa: /*Multiple-row subqueries,returns 
+more than one row of results.Used with (IN,ANY,ALL)*/
+
+SELECT name FROM employees WHERE department_id
+IN (SELECT department_id FROM departments WHERE location_id =35);
+
+
+/*Single_row subqueries.Used with (=,>,<,>=,<=),
+returns single row of results*/
+
+SELECT name FROM employees WHERE salary = (SELECT MAX(salary)FROM employees);
+
+/*Multiple-column subqueries.Returns more than one column of results.
+Used in (FROM, SELECT nad WHERE clauses)*/
+
+SELECT department_id,department_name
+FROM departments
+WHERE(department_id,location_id) IN 
+(SELECT department_id,location_id FROM location);
+
+
+--Scalar subqueries.returns a single value(single row and column)
+
+SELECT name,(SELECT MAX(salary) FROM employees)
+AS max_salary
+FROM employees;
+…
+[1:09 PM, 7/22/2024] Papa: --Nested subqueries
+
+SELECT name
+FROM employees
+WHERE department_id = (SELECT department_id FROM departments
+WHERE location_id = (SELECT location_id FROM locations
+WHERE city = 'Nairobi'));
+
+
+-/*Exists Subqueries.Testig existence of roews in a
+
+subquery.uses (EXISTS ,NOT EXISTS)*/
+
+SELECT name 
+FROM employees 
+WHERE EXISTS(SELECT 1 FROM departments WHERE manager_id 
+= employees.employee_id);
+[5:36 PM, 7/26/2024] Papa: --The grant statement to table
+GRANT SELECT,INSERT ON TABLE Papi TO Tonny;
+
+--The grant statement to Database
+
+GRANT ALL PRIVILEGES ON DATABASE ntflix_series TO Onwonga
+WITH GRANT OPTION;
+[5:40 PM, 7/26/2024] Papa: --The revoke statement to a table
+REVOKE SELECT,INSERT ON TABLE employees FROM Tonny;
+
+--The revoke statement to a database
+REVOKE ALL PRIVILEGES ON DATABASE Papito FROM Onwonga
+
 
 
 
