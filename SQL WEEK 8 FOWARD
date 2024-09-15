@@ -563,6 +563,124 @@ REVOKE SELECT,INSERT ON TABLE employees FROM Tonny;
 --The revoke statement to a database
 REVOKE ALL PRIVILEGES ON DATABASE Papito FROM Onwonga
 
+#Difference between IN and OR keywords.
+
+
+#OR
+#Used with WHERE clause
+
+SELECT * FROM Customers
+WHERE Country = 'Germany' OR  Country ='Spain';
+
+
+
+#IN  
+#Specify the WHERE clause.Shorthand for multiple OR operations
+
+
+SELECT * FROM Customers
+WHERE Country IN ('Germany','France','UK');
+
+
+#NOT operator
+#Can be use with BETWEEN,IN ,LIKE,GRETER THAN,NOT LESS THAN,
+
+SELECT * FROM Customers
+WHERE NOT country = 'Spain';
+
+
+
+SELECT * FROM Customers
+WHERE city NOT IN ('Paris','London');
+
+SELECT *FROM Customers 
+WHERE NOT customerID>45;
+
+SELECT *FROM Customers
+WHERE CustomerID NOT BETWEEN 10 AND 60;
+
+[1:24 PM, 9/11/2024] Papa: #CONSTRAINTS
+
+#1.NOT NULL
+
+CRETE TABLE Papi(
+PapiID INT AUTO_INCREMENT PRIMARY KEY,
+Firstname VARCHAR(50) NOT NULL,
+Lastname VARCHAR(50) NOT NULL
+);
+
+
+#2.UNIQUE-Ensures that all the values in the column are different
+
+CREATE TABLE Emperor(
+EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
+Email VARCHAR(100)UNIQUE
+);
+
+
+#3.PRIMARY KEY-this uniquely identifies eacgh record in a table
+
+CREATE TABLE Employees(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Firstname VARCHAR(50));
+
+#4.FOREIGN KEY-its a value that exists in another table
+
+CREATE TABLE Orders(
+ID INT PRIMARY KEY,
+Salary id,
+FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeesID));
+
+#5.CHECK-Ensures all values in a column 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#CONSTRAINTS
+
+#1.NOT NULL
+
+CRETE TABLE Papi(
+PapiID INT AUTO_INCREMENT PRIMAR…
+[3:25 PM, 9/11/2024] Papa: #5.CHECK-Ensures all values in a column
+
+CREATE TABLE Omotangi(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Salary DECIMA(10,2) CHECK(salary > 0)
+);
+[3:46 PM, 9/11/2024] Papa: #6.DEFAULT-It sets a default value for a column when no value has been provided
+
+
+CREATE TABLE Onwonga(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Normaldate DATE DEFAULT CURRENT_DATE
+);
+[9:49 AM, 9/12/2024] Papa: CREATE TABLE Onwonga(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Normaldate DATE DEFAULT CURRENT_DATE
+);
+[10:25 AM, 9/12/2024] Papa: #Difference between IN and OR keywords.
+
+
+#OR
+#Used with WHERE clause
+
+SELECT * FROM Customers
+WHERE Country = 'Germany' OR  Country ='Spain';
 
 
 
