@@ -682,7 +682,84 @@ Normaldate DATE DEFAULT CURRENT_DATE
 SELECT * FROM Customers
 WHERE Country = 'Germany' OR  Country ='Spain';
 
+[12:55 PM, 8/26/2024] Papa: #MYSQL FUNCTIONS
 
+   #STRING FUNCTIONS
+
+SELECT CONCAT('Hello','''world') AS greeting;
+
+SELECT LENGTH ('Hello world') AS lenght;
+
+SELECT LOWER('hello');
+
+#SUBSTRING(string,start_position,length)
+
+SELECT SUBSTRING ('Hello world',7,5) AS substring;
+
+#REPLACE (string,old_string,new_string)
+SELECT REPLACE ('Hello world','world','mysql')
+---RESULT; HELLO MYSQL
+[12:26 PM, 9/3/2024] Papa: #NUMERIC FUNCTIONS
+
+#  ROUND()
+SELECT ROUND(10.432,1);
+--Answer  10.5
+
+#  SQRT()
+SELECT SQRT(16);
+
+---Answer = 4
+
+# MOD Returns the remainder of a division operation
+
+SELECT MOD(10,3);
+--Result 1
+
+# DATE AND TIME TRANSACTIONS
+
+# NOW() -returns the current date and time.
+
+SELECT NOW();
+
+#CURDATE() and CURTIME() wreturns tghe current date
+or time
+
+SELECT CURDATE();
+[1:13 PM, 9/4/2024] Papa: #CONTROL FLOW FUNCTIONS
+
+#IF -returns a value if a condition is met.
+
+SELECT IF(salary>5000 ,'High','Low') FROM employees;
+
+#COALESCE-returns the first non-Null value in a list
+
+SELECT COALESCE(NULL,NULL,'Hello');
+
+--result-Hello
+
+
+#JSON functions
+[11:25 AM, 9/11/2024] Papa: #DROP
+DROP TABLE Papi;
+DROP DATABASE Onwonga;
+
+#BACKUP
+
+BACKUP DATABASE Onwonga TO DISK = 'C:\Documents';
+
+
+#TRUNCATE
+
+TRUNCATE TABLE Papi;
+
+
+#ALTER
+
+ALTER TABLE Papi
+ADD email VARCHAR
+
+ALTER TABLE Papi
+DROP COLUMN email
 
 
 
