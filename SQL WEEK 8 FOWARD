@@ -761,7 +761,7 @@ ADD email VARCHAR
 ALTER TABLE Papi
 DROP COLUMN email
 
-#using ROLLUP which is similar to GROUP BY
+#using ROLLUP together with  GROUP BY
 
 SELECT
    customer_id,
@@ -775,6 +775,14 @@ WHERE
    EXTRACT(YEAR FROM order_date) = 2017
 GROUP BY
    ROLLUP(customer_id);
+
+
+SELECT region,
+       product_category,
+       SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY ROLLUP (region, product_category)
+ORDER BY region, product_category;
 
 
 
