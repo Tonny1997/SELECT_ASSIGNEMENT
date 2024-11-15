@@ -785,6 +785,16 @@ GROUP BY ROLLUP (region, product_category)
 ORDER BY region, product_category;
 
 
+#ORACLE EXTRACT
+#The Oracle EXTRACT() function extracts a specific component (year, month, day, hour, minute, second, etc.,) 
+from a datetime or an interval value
+
+SELECT
+  EXTRACT( HOUR FROM INTERVAL '5 04:30:20.11' DAY TO SECOND )
+FROM
+  dual;
+
+
 
 
 
